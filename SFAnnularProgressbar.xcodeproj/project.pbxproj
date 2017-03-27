@@ -15,6 +15,8 @@
 		E6A50D371E88EA88003B8310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A50D351E88EA88003B8310 /* LaunchScreen.storyboard */; };
 		E6A50D421E88EA88003B8310 /* SFAnnularProgressbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D411E88EA88003B8310 /* SFAnnularProgressbarTests.m */; };
 		E6A50D4D1E88EA88003B8310 /* SFAnnularProgressbarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D4C1E88EA88003B8310 /* SFAnnularProgressbarUITests.m */; };
+		E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */; };
+		E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		E6A50D481E88EA88003B8310 /* SFAnnularProgressbarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFAnnularProgressbarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A50D4C1E88EA88003B8310 /* SFAnnularProgressbarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFAnnularProgressbarUITests.m; sourceTree = "<group>"; };
 		E6A50D4E1E88EA88003B8310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A50D5B1E88F28A003B8310 /* SFAnnularBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnnularBaseView.h; sourceTree = "<group>"; };
+		E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnularBaseView.m; sourceTree = "<group>"; };
+		E6A50D5E1E88F2E5003B8310 /* SFAnnuarMainTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnnuarMainTool.h; sourceTree = "<group>"; };
+		E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnuarMainTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 				E6A50D2D1E88EA88003B8310 /* ViewController.h */,
 				E6A50D2E1E88EA88003B8310 /* ViewController.m */,
 				E6A50D301E88EA88003B8310 /* Main.storyboard */,
+				E6A50D5A1E88F276003B8310 /* SFAnnularMain */,
 				E6A50D331E88EA88003B8310 /* Assets.xcassets */,
 				E6A50D351E88EA88003B8310 /* LaunchScreen.storyboard */,
 				E6A50D381E88EA88003B8310 /* Info.plist */,
@@ -138,6 +145,17 @@
 				E6A50D4E1E88EA88003B8310 /* Info.plist */,
 			);
 			path = SFAnnularProgressbarUITests;
+			sourceTree = "<group>";
+		};
+		E6A50D5A1E88F276003B8310 /* SFAnnularMain */ = {
+			isa = PBXGroup;
+			children = (
+				E6A50D5B1E88F28A003B8310 /* SFAnnularBaseView.h */,
+				E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */,
+				E6A50D5E1E88F2E5003B8310 /* SFAnnuarMainTool.h */,
+				E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */,
+			);
+			path = SFAnnularMain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +225,7 @@
 				TargetAttributes = {
 					E6A50D231E88EA88003B8310 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AR3398K2DD;
 						ProvisioningStyle = Automatic;
 					};
 					E6A50D3C1E88EA88003B8310 = {
@@ -275,6 +294,8 @@
 			files = (
 				E6A50D2F1E88EA88003B8310 /* ViewController.m in Sources */,
 				E6A50D2C1E88EA88003B8310 /* AppDelegate.m in Sources */,
+				E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */,
+				E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */,
 				E6A50D291E88EA88003B8310 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AR3398K2DD;
 				INFOPLIST_FILE = SFAnnularProgressbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFAnnularProgressbar";
@@ -435,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AR3398K2DD;
 				INFOPLIST_FILE = SFAnnularProgressbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFAnnularProgressbar";
@@ -507,6 +530,7 @@
 				E6A50D531E88EA88003B8310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6A50D541E88EA88003B8310 /* Build configuration list for PBXNativeTarget "SFAnnularProgressbarTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +539,7 @@
 				E6A50D561E88EA88003B8310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6A50D571E88EA88003B8310 /* Build configuration list for PBXNativeTarget "SFAnnularProgressbarUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +548,7 @@
 				E6A50D591E88EA88003B8310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
