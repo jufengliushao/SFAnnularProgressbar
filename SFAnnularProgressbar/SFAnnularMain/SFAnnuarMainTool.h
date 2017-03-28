@@ -31,4 +31,11 @@
  @param view UIView
  */
 - (void)sf_cutImageView:(UIView *)view;
+
+/**
+ z轴转动
+
+ @return <#return value description#>
+ */
+- (CABasicAnimation *)sf_returnZAnimantion;
 @end

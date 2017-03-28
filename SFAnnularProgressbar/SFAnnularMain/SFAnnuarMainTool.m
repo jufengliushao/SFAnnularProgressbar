@@ -47,4 +47,14 @@ SFAnnuarMainTool *tool = nil;
     layer.path = path.CGPath;
     view.layer.mask = layer;
 }
+
+- (CABasicAnimation *)sf_returnZAnimantion{
+    CABasicAnimation *zAnim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    zAnim.repeatCount = HUGE_VAL;
+    zAnim.removedOnCompletion = YES;
+    zAnim.duration = 5;
+    zAnim.fromValue = @0;
+    zAnim.toValue = @(2 * M_PI);
+    return zAnim;
+}
 @end

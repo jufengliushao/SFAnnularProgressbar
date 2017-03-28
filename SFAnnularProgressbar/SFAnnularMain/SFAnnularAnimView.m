@@ -25,6 +25,7 @@
         _circularView.backgroundColor = [UIColor orangeColor];
         [self addSubview:_circularView];
         _p = .3;
+        [self.layer addAnimation:[[SFAnnuarMainTool defaultShared] sf_returnZAnimantion]forKey:@"z-animation"];
     }
     return self;
 }
