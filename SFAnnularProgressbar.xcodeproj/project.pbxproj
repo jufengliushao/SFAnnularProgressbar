@@ -18,6 +18,8 @@
 		E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */; };
 		E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */; };
 		E6A50D671E89F8ED003B8310 /* UIView+SFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D661E89F8ED003B8310 /* UIView+SFExtension.m */; };
+		E6A50D6A1E8A0756003B8310 /* SFAnnularAnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D691E8A0756003B8310 /* SFAnnularAnimView.m */; };
+		E6A50D6D1E8A0EBD003B8310 /* SFBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D6C1E8A0EBD003B8310 /* SFBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnuarMainTool.m; sourceTree = "<group>"; };
 		E6A50D651E89F8ED003B8310 /* UIView+SFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SFExtension.h"; sourceTree = "<group>"; };
 		E6A50D661E89F8ED003B8310 /* UIView+SFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SFExtension.m"; sourceTree = "<group>"; };
+		E6A50D681E8A0756003B8310 /* SFAnnularAnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnnularAnimView.h; sourceTree = "<group>"; };
+		E6A50D691E8A0756003B8310 /* SFAnnularAnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnularAnimView.m; sourceTree = "<group>"; };
+		E6A50D6B1E8A0EBD003B8310 /* SFBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseView.h; sourceTree = "<group>"; };
+		E6A50D6C1E8A0EBD003B8310 /* SFBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +160,12 @@
 			isa = PBXGroup;
 			children = (
 				E6A50D611E89F8B7003B8310 /* Helper */,
+				E6A50D6B1E8A0EBD003B8310 /* SFBaseView.h */,
+				E6A50D6C1E8A0EBD003B8310 /* SFBaseView.m */,
 				E6A50D5B1E88F28A003B8310 /* SFAnnularBaseView.h */,
 				E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */,
+				E6A50D681E8A0756003B8310 /* SFAnnularAnimView.h */,
+				E6A50D691E8A0756003B8310 /* SFAnnularAnimView.m */,
 				E6A50D5E1E88F2E5003B8310 /* SFAnnuarMainTool.h */,
 				E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */,
 			);
@@ -311,6 +321,8 @@
 				E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */,
 				E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */,
 				E6A50D291E88EA88003B8310 /* main.m in Sources */,
+				E6A50D6D1E8A0EBD003B8310 /* SFBaseView.m in Sources */,
+				E6A50D6A1E8A0756003B8310 /* SFAnnularAnimView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
