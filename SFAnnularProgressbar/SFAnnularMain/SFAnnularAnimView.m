@@ -82,4 +82,10 @@
     // 释放渐变色
     CGGradientRelease(gradient);
 }
+
+#pragma mark - set 
+- (void)setPercent:(CGFloat)percent{
+    _p = percent;
+    [self drawRect:self.frame];
+}
 @end

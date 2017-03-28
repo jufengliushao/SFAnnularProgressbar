@@ -18,6 +18,9 @@
     UIImageView *_circularIV;
     CGFloat _p;
     SFAnnularAnimView *_animView;
+    dispatch_source_t _timer;
+    dispatch_time_t _start;
+    NSInteger _curPer;
 }
 
 @end
@@ -30,8 +33,20 @@
         _circularIV = [[SFAnnuarMainTool defaultShared] sf_drawIVCircularFrame:CGRectMake(0, 0, wh, wh) radius:radius beginDegrees:0 endDegrees:2 * M_PI isClockwrise:YES borderWidth:5 borderColor:[UIColor lightGrayColor]];
         [self addSubview: _circularIV];
         _p = 0.3;
+        _curPer = 0;
         _animView = [[SFAnnularAnimView alloc] init];
         [_circularIV addSubview:_animView];
+        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
+        uint64_t interval = 1.0 * NSEC_PER_SEC;
+        _start = dispatch_time(DISPATCH_TIME_NOW, 0);
+        dispatch_source_set_timer(_timer, _start, interval, 0);
+        dispatch_source_set_event_handler(_timer, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.perLabel.text = [NSString stringWithFormat:@"%ld%%", _curPer++];
+            });
+//            _animView.percent = _curPer / 100.0;
+        });
+        dispatch_resume(_timer);
     }
     return self;
 }
@@ -40,7 +55,6 @@
     _circularIV.frame = CGRectMake(HalfV(self.bounds.size.width - wh), HalfV(self.bounds.size.height - wh), wh, wh);
     _animView.frame = _circularIV.bounds;
     self.perLabel.frame = CGRectMake( 0, HalfV(_circularIV.height) - 13, _circularIV.width, 25);
-//    self.perLabel.center = _circularIV.centerPoint;
     [super drawRect:rect];
 }
 
