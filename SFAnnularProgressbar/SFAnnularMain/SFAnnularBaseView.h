@@ -10,4 +10,6 @@
 
 @interface SFAnnularBaseView : UIView
 
+@property (nonatomic, assign) CGFloat percent;
+
 @end

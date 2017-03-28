@@ -17,6 +17,7 @@
 		E6A50D4D1E88EA88003B8310 /* SFAnnularProgressbarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D4C1E88EA88003B8310 /* SFAnnularProgressbarUITests.m */; };
 		E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */; };
 		E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */; };
+		E6A50D671E89F8ED003B8310 /* UIView+SFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A50D661E89F8ED003B8310 /* UIView+SFExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnularBaseView.m; sourceTree = "<group>"; };
 		E6A50D5E1E88F2E5003B8310 /* SFAnnuarMainTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnnuarMainTool.h; sourceTree = "<group>"; };
 		E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnnuarMainTool.m; sourceTree = "<group>"; };
+		E6A50D651E89F8ED003B8310 /* UIView+SFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SFExtension.h"; sourceTree = "<group>"; };
+		E6A50D661E89F8ED003B8310 /* UIView+SFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SFExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,12 +153,22 @@
 		E6A50D5A1E88F276003B8310 /* SFAnnularMain */ = {
 			isa = PBXGroup;
 			children = (
+				E6A50D611E89F8B7003B8310 /* Helper */,
 				E6A50D5B1E88F28A003B8310 /* SFAnnularBaseView.h */,
 				E6A50D5C1E88F28A003B8310 /* SFAnnularBaseView.m */,
 				E6A50D5E1E88F2E5003B8310 /* SFAnnuarMainTool.h */,
 				E6A50D5F1E88F2E5003B8310 /* SFAnnuarMainTool.m */,
 			);
 			path = SFAnnularMain;
+			sourceTree = "<group>";
+		};
+		E6A50D611E89F8B7003B8310 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E6A50D651E89F8ED003B8310 /* UIView+SFExtension.h */,
+				E6A50D661E89F8ED003B8310 /* UIView+SFExtension.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A50D2F1E88EA88003B8310 /* ViewController.m in Sources */,
+				E6A50D671E89F8ED003B8310 /* UIView+SFExtension.m in Sources */,
 				E6A50D2C1E88EA88003B8310 /* AppDelegate.m in Sources */,
 				E6A50D5D1E88F28A003B8310 /* SFAnnularBaseView.m in Sources */,
 				E6A50D601E88F2E5003B8310 /* SFAnnuarMainTool.m in Sources */,
