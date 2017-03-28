@@ -39,11 +39,26 @@
 - (void)drawRect:(CGRect)rect{
     _circularIV.frame = CGRectMake(HalfV(self.bounds.size.width - wh), HalfV(self.bounds.size.height - wh), wh, wh);
     _animView.frame = _circularIV.bounds;
+    self.perLabel.frame = CGRectMake( 0, HalfV(_circularIV.height) - 13, _circularIV.width, 25);
+//    self.perLabel.center = _circularIV.centerPoint;
     [super drawRect:rect];
 }
 
 #pragma mark - set 
 - (void)setPercent:(CGFloat)percent{
     _p = percent;
+}
+
+#pragma mark - get 
+- (UILabel *)perLabel{
+    if (!_perLabel) {
+        _perLabel = [[UILabel alloc] init];
+        _perLabel.textColor = [UIColor lightGrayColor];
+        _perLabel.font = [UIFont systemFontOfSize:15];
+        _perLabel.textAlignment = NSTextAlignmentCenter;
+        _perLabel.text = @"100%";
+        [_circularIV addSubview:_perLabel];
+    }
+    return _perLabel;
 }
 @end

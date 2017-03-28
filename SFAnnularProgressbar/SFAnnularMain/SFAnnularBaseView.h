@@ -11,5 +11,6 @@
 @interface SFAnnularBaseView : SFBaseView
 
 @property (nonatomic, assign) CGFloat percent;
+@property (nonatomic, strong) UILabel *perLabel;
 
 @end
