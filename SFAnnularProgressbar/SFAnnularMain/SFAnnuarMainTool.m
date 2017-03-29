@@ -57,4 +57,38 @@ SFAnnuarMainTool *tool = nil;
     zAnim.toValue = @(2 * M_PI);
     return zAnim;
 }
+
+- (UIBezierPath *)sf_bezierPathWithCenter:(CGPoint)center radius:(CGFloat)radius startDegrees:(double)start endDegress:(double)end{
+    UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:start endAngle:end clockwise:NO];
+    return circlePath;
+}
+
+- (CAShapeLayer *)sf_shapeLayerWithLineWidth:(CGFloat)lineWidth{
+    CAShapeLayer *waveline = [CAShapeLayer layer];
+    waveline.lineCap = kCALineCapButt;
+    waveline.lineJoin = kCALineJoinRound;
+    waveline.strokeColor = [UIColor redColor].CGColor;
+    waveline.fillColor = [[UIColor clearColor] CGColor];
+    waveline.lineWidth = lineWidth;
+    waveline.backgroundColor = [UIColor clearColor].CGColor;
+    return waveline;
+}
+
+- (void)sf_setDiffColorView:(UIView *)view{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor yellowColor].CGColor, (__bridge id)[UIColor blueColor].CGColor];
+    gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = CGRectMake(0, 100, 300, 100);
+    [view.layer addSublayer:gradientLayer];
+}
+
+- (UIImage *)sf_imageWithUIView:(UIView *)view{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, view.layer.contentsScale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end

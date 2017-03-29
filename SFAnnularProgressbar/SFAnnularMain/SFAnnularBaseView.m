@@ -40,11 +40,13 @@
         uint64_t interval = 1.0 * NSEC_PER_SEC;
         _start = dispatch_time(DISPATCH_TIME_NOW, 0);
         dispatch_source_set_timer(_timer, _start, interval, 0);
-        dispatch_source_set_event_handler(_timer, ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.perLabel.text = [NSString stringWithFormat:@"%ld%%", _curPer++];
+        dispatch_async(dispatch_queue_create("com.timer", DISPATCH_QUEUE_CONCURRENT), ^{
+            dispatch_source_set_event_handler(_timer, ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.perLabel.text = [NSString stringWithFormat:@"%ld%%", _curPer++];
+                });
+                _animView.percent = _curPer / 100.0;
             });
-//            _animView.percent = _curPer / 100.0;
         });
         dispatch_resume(_timer);
     }

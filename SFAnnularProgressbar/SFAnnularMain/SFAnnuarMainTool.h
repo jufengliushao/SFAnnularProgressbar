@@ -1,5 +1,5 @@
 //
-//  SFAnnuarMainTool.h
+//
 //  SFAnnularProgressbar
 //
 //  Created by cnlive-lsf on 2017/3/27.
@@ -38,4 +38,38 @@
  @return <#return value description#>
  */
 - (CABasicAnimation *)sf_returnZAnimantion;
+
+/**
+ 贝塞尔曲线切圆
+
+ @param center 中心点
+ @param radius 半径
+ @param start 开始角度
+ @param end 结束角度
+ @return UIBezierPath
+ */
+- (UIBezierPath *)sf_bezierPathWithCenter:(CGPoint)center radius:(CGFloat)radius startDegrees:(double)start endDegress:(double)end;
+
+/**
+ 返回遮罩层
+
+ @param lineWidth 圆环宽度
+ @return CAShapeLayer
+ */
+- (CAShapeLayer *)sf_shapeLayerWithLineWidth:(CGFloat)lineWidth;
+
+/**
+ 渐变色
+
+ @param view <#view description#>
+ */
+- (void)sf_setDiffColorView:(UIView *)view;
+
+/**
+ 将view转换成image
+
+ @param view <#view description#>
+ @return <#return value description#>
+ */
+- (UIImage*)sf_imageWithUIView:(UIView*)view;
 @end
