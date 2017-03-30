@@ -13,4 +13,5 @@
 @property (nonatomic, assign) CGFloat percent;
 @property (nonatomic, strong) UILabel *perLabel;
 
+@property (nonatomic, strong) UIButton *actionBtn;
 @end

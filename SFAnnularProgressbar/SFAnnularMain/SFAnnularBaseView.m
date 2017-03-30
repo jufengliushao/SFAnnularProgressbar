@@ -10,7 +10,7 @@
 #import "SFAnnuarMainTool.h"
 #import "UIView+SFExtension.h"
 #import "SFAnnularAnimView.h"
-
+#import "UIButton+SFButton.h"
 #define height(view) view.bounds.size.height
 #define weight(view) view.bounds.size.width
 
@@ -48,7 +48,7 @@
                 _animView.percent = _curPer / 100.0;
             });
         });
-        dispatch_resume(_timer);
+//        dispatch_resume(_timer);
     }
     return self;
 }
@@ -57,6 +57,7 @@
     _circularIV.frame = CGRectMake(HalfV(self.bounds.size.width - wh), HalfV(self.bounds.size.height - wh), wh, wh);
     _animView.frame = _circularIV.bounds;
     self.perLabel.frame = CGRectMake( 0, HalfV(_circularIV.height) - 13, _circularIV.width, 25);
+    self.actionBtn.frame = CGRectMake(self.centerX - 25, self.centerY + radius + 20, 50, 30);
     [super drawRect:rect];
 }
 
@@ -76,5 +77,26 @@
         [_circularIV addSubview:_perLabel];
     }
     return _perLabel;
+}
+
+- (UIButton *)actionBtn{
+    if (!_actionBtn) {
+        _actionBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_actionBtn setTitleColor:[UIColor blueColor] forState:(UIControlStateNormal & UIControlStateSelected)];
+        [_actionBtn setTitle:@"开始" forState:(UIControlStateNormal)];
+        [_actionBtn setTitle:@"暂停" forState:(UIControlStateSelected)];
+        _actionBtn.selected = NO;
+        BS(bs);
+        [_actionBtn addTargetAction:^(UIButton *sender) {
+            if (sender.isSelected) {
+                dispatch_suspend(bs->_timer);
+            }else{
+                dispatch_resume(bs->_timer);
+            }
+            sender.selected = !sender.isSelected;
+        }];
+        [self addSubview:_actionBtn];
+    }
+    return _actionBtn;
 }
 @end

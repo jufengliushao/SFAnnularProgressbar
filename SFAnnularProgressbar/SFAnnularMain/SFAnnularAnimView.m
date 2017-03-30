@@ -9,6 +9,7 @@
 #import "SFAnnularAnimView.h"
 #import "UIView+SFExtension.h"
 #import "SFAnnuarMainTool.h"
+
 @interface SFAnnularAnimView(){
     UIView *_circularView;
     CGFloat _p;

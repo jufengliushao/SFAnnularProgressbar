@@ -13,6 +13,8 @@ static const CGFloat radius = 50;
 static const CGFloat circularW = 10;
 #define HalfV(value) ((value) / 2.0)
 #define DoubV(value) ((value) * 2.0)
+
+#define BS(blockSelf) __block __typeof(&*self)blockSelf = self;
 @interface SFBaseView : UIView
 
 @end
