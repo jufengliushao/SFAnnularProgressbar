@@ -48,13 +48,17 @@
 
 - (void)drawArc{
     CAShapeLayer *l = [[SFAnnuarMainTool defaultShared] sf_shapeLayerWithLineWidth:5];
-    l.path = [[SFAnnuarMainTool defaultShared] sf_bezierPathWithCenter:_arcImg.centerPoint radius:radius startDegrees:-M_PI_2 - 0.1 endDegress:(-2.5 * M_PI + 0.1)*_p].CGPath;
-    _arcImg.layer.mask = l;
+    l.path = [[SFAnnuarMainTool defaultShared] sf_bezierPathWithCenter:_arcImg.centerPoint radius:radius startDegrees:-M_PI_2 - 0.1 endDegress:MIN((-2 * M_PI + 0.2)*_p -M_PI_2 -0.1, -M_PI_2 - 0.1)].CGPath;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _arcImg.layer.mask = l;
+    });
 }
 
 #pragma mark - set 
 - (void)setPercent:(CGFloat)percent{
     _p = percent;
-//    [self drawArc];
+    dispatch_async(dispatch_queue_create("com.aa", DISPATCH_QUEUE_CONCURRENT), ^{
+        [self drawArc];
+    });
 }
 @end
