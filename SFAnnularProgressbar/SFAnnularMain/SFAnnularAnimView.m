@@ -23,13 +23,13 @@
     if (self = [super init]) {
         self.backgroundColor = [UIColor clearColor];
         _circularView = [[UIView alloc] init];
-        _circularView.backgroundColor = [UIColor orangeColor];
+        _circularView.backgroundColor = [UIColor colorWithRed:0 green:255/255.0 blue:242/255.0 alpha:1];
         [self addSubview:_circularView];
         _p = 0.;
         _arcImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
         _arcImg.layer.masksToBounds = YES;
         [self addSubview:_arcImg];
-//        [self.layer addAnimation:[[SFAnnuarMainTool defaultShared] sf_returnZAnimantion]forKey:@"z-animation"];
+        [self.layer addAnimation:[[SFAnnuarMainTool defaultShared] sf_returnZAnimantion]forKey:@"z-animation"];
     }
     return self;
 }
@@ -50,7 +50,9 @@
     CAShapeLayer *l = [[SFAnnuarMainTool defaultShared] sf_shapeLayerWithLineWidth:5];
     l.path = [[SFAnnuarMainTool defaultShared] sf_bezierPathWithCenter:_arcImg.centerPoint radius:radius startDegrees:-M_PI_2 - 0.1 endDegress:MIN((-2 * M_PI + 0.2)*_p -M_PI_2 -0.1, -M_PI_2 - 0.1)].CGPath;
     dispatch_async(dispatch_get_main_queue(), ^{
-        _arcImg.layer.mask = l;
+        [UIView animateWithDuration:0.3 animations:^{
+           _arcImg.layer.mask = l;
+        }];
     });
 }
 

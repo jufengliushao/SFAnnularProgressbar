@@ -30,7 +30,7 @@
 - (instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = [UIColor whiteColor];
-        _circularIV = [[SFAnnuarMainTool defaultShared] sf_drawIVCircularFrame:CGRectMake(0, 0, wh, wh) radius:radius beginDegrees:0 endDegrees:2 * M_PI isClockwrise:YES borderWidth:5 borderColor:[UIColor lightGrayColor]];
+        _circularIV = [[SFAnnuarMainTool defaultShared] sf_drawIVCircularFrame:CGRectMake(0, 0, wh, wh) radius:radius beginDegrees:0 endDegrees:2 * M_PI isClockwrise:YES borderWidth:5 borderColor:[UIColor colorWithRed:182/255.0 green:214/255.0 blue:247/255.0 alpha:1]];
         [self addSubview: _circularIV];
         _p = 0.3;
         _curPer = 0;
